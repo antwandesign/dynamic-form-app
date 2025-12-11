@@ -1,0 +1,402 @@
+{
+  "title": "Заявление за Кредит",
+  "description": "Попълнете формата, за да кандидатствате за личен или бизнес кредит. Полетата отбелязани с * са задължителни.",
+  "fields": [
+    {
+      "id": "loanDetails",
+      "type": "group",
+      "label": "Детайли за Кредита",
+      "description": "Информация за желания кредит",
+      "fields": [
+        {
+          "id": "loanAmount",
+          "type": "validated-text",
+          "label": "Сума на Кредита (лв.)",
+          "placeholder": "Въведете сума (напр. 50000)",
+          "validations": [
+            { "required": true, "message": "Сумата на кредита е задължителна" },
+            {
+              "pattern": "^\\d+(\\.\\d{1,2})?$",
+              "message": "Моля, въведете валидна сума"
+            }
+          ]
+        },
+        {
+          "id": "loanPurpose",
+          "type": "dropdown",
+          "label": "Цел на Кредита",
+          "placeholder": "Изберете целта на кредита...",
+          "options": [
+            { "label": "Покупка на имот", "value": "HOME_PURCHASE" },
+            { "label": "Ремонт на жилище", "value": "HOME_IMPROVEMENT" },
+            { "label": "Рефинансиране", "value": "DEBT_CONSOLIDATION" },
+            { "label": "Разширяване на бизнес", "value": "BUSINESS_EXPANSION" },
+            { "label": "Покупка на оборудване", "value": "EQUIPMENT" },
+            { "label": "Оборотен капитал", "value": "WORKING_CAPITAL" },
+            { "label": "Друго", "value": "OTHER" }
+          ],
+          "validations": [
+            { "required": true, "message": "Моля, изберете цел на кредита" }
+          ]
+        },
+        {
+          "id": "loanTerm",
+          "type": "radio",
+          "label": "Срок на Кредита",
+          "options": [
+            { "label": "12 месеца", "value": "12" },
+            { "label": "24 месеца", "value": "24" },
+            { "label": "36 месеца", "value": "36" },
+            { "label": "48 месеца", "value": "48" },
+            { "label": "60 месеца", "value": "60" }
+          ],
+          "validations": [
+            { "required": true, "message": "Моля, изберете срок на кредита" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "applicantType",
+      "type": "dropdown",
+      "label": "Тип Кандидат",
+      "placeholder": "Кандидатствате като физическо или юридическо лице?",
+      "options": [
+        { "label": "Физическо лице", "value": "INDIVIDUAL" },
+        { "label": "Юридическо лице", "value": "BUSINESS" }
+      ],
+      "validations": [
+        { "required": true, "message": "Моля, изберете тип кандидат" }
+      ]
+    },
+    {
+      "id": "individualApplicant",
+      "type": "group",
+      "label": "Лични Данни",
+      "description": "Вашите лични данни за заявлението",
+      "visibility": {
+        "conditions": [
+          {
+            "field": "applicantType",
+            "operator": "equals",
+            "value": "INDIVIDUAL"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "id": "firstName",
+          "type": "text",
+          "label": "Име",
+          "placeholder": "Въведете вашето име",
+          "validations": [
+            { "required": true, "message": "Името е задължително" }
+          ]
+        },
+        {
+          "id": "middleName",
+          "type": "text",
+          "label": "Презиме",
+          "placeholder": "Въведете вашето презиме",
+          "validations": [
+            { "required": true, "message": "Презимето е задължително" }
+          ]
+        },
+        {
+          "id": "lastName",
+          "type": "text",
+          "label": "Фамилия",
+          "placeholder": "Въведете вашата фамилия",
+          "validations": [
+            { "required": true, "message": "Фамилията е задължителна" }
+          ]
+        },
+        {
+          "id": "egn",
+          "type": "validated-text",
+          "label": "ЕГН (Единен Граждански Номер)",
+          "placeholder": "XXXXXXXXXX",
+          "validations": [
+            { "required": true, "message": "ЕГН е задължително" },
+            {
+              "pattern": "^\\d{10}$",
+              "message": "ЕГН трябва да е точно 10 цифри"
+            }
+          ]
+        },
+        {
+          "id": "idCardNumber",
+          "type": "validated-text",
+          "label": "Номер на Лична Карта",
+          "placeholder": "XXXXXXXXX",
+          "validations": [
+            {
+              "required": true,
+              "message": "Номерът на лична карта е задължителен"
+            },
+            {
+              "pattern": "^\\d{9}$",
+              "message": "Номерът на лична карта трябва да е 9 цифри"
+            }
+          ]
+        },
+        {
+          "id": "employmentStatus",
+          "type": "dropdown",
+          "label": "Трудов Статус",
+          "options": [
+            { "label": "Назначен на пълен работен ден", "value": "FULL_TIME" },
+            {
+              "label": "Назначен на непълен работен ден",
+              "value": "PART_TIME"
+            },
+            { "label": "Самоосигуряващ се", "value": "SELF_EMPLOYED" },
+            { "label": "Пенсионер", "value": "RETIRED" },
+            { "label": "Безработен", "value": "UNEMPLOYED" }
+          ],
+          "validations": [
+            { "required": true, "message": "Трудовият статус е задължителен" }
+          ]
+        },
+        {
+          "id": "monthlyIncome",
+          "type": "validated-text",
+          "label": "Месечен Доход (лв.)",
+          "placeholder": "Въведете месечния си доход",
+          "validations": [
+            { "required": true, "message": "Месечният доход е задължителен" },
+            {
+              "pattern": "^\\d+(\\.\\d{1,2})?$",
+              "message": "Моля, въведете валидна сума"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "businessApplicant",
+      "type": "group",
+      "label": "Фирмени Данни",
+      "description": "Информация за вашата фирма",
+      "visibility": {
+        "conditions": [
+          {
+            "field": "applicantType",
+            "operator": "equals",
+            "value": "BUSINESS"
+          }
+        ]
+      },
+      "fields": [
+        {
+          "id": "companyName",
+          "type": "text",
+          "label": "Наименование на Фирмата",
+          "placeholder": "Въведете името на фирмата",
+          "validations": [
+            { "required": true, "message": "Името на фирмата е задължително" }
+          ]
+        },
+        {
+          "id": "eik",
+          "type": "validated-text",
+          "label": "ЕИК/БУЛСТАТ",
+          "placeholder": "XXXXXXXXX или XXXXXXXXXXXXX",
+          "validations": [
+            { "required": true, "message": "ЕИК/БУЛСТАТ е задължителен" },
+            {
+              "pattern": "^(\\d{9}|\\d{13})$",
+              "message": "ЕИК трябва да е 9 цифри, БУЛСТАТ - 13 цифри"
+            }
+          ]
+        },
+        {
+          "id": "businessType",
+          "type": "dropdown",
+          "label": "Правна Форма",
+          "options": [
+            { "label": "Едноличен Търговец (ЕТ)", "value": "ET" },
+            {
+              "label": "Дружество с Ограничена Отговорност (ООД)",
+              "value": "OOD"
+            },
+            { "label": "Еднолично ООД (ЕООД)", "value": "EOOD" },
+            { "label": "Акционерно Дружество (АД)", "value": "AD" },
+            { "label": "Събирателно Дружество (СД)", "value": "SD" },
+            { "label": "Командитно Дружество (КД)", "value": "KD" }
+          ],
+          "validations": [
+            { "required": true, "message": "Правната форма е задължителна" }
+          ]
+        },
+        {
+          "id": "yearsInBusiness",
+          "type": "dropdown",
+          "label": "Години в Бизнеса",
+          "options": [
+            { "label": "По-малко от 1 година", "value": "0" },
+            { "label": "1-2 години", "value": "1-2" },
+            { "label": "3-5 години", "value": "3-5" },
+            { "label": "6-10 години", "value": "6-10" },
+            { "label": "Повече от 10 години", "value": "10+" }
+          ],
+          "validations": [
+            {
+              "required": true,
+              "message": "Годините в бизнеса са задължителни"
+            }
+          ]
+        },
+        {
+          "id": "annualRevenue",
+          "type": "validated-text",
+          "label": "Годишен Оборот (лв.)",
+          "placeholder": "Въведете годишния оборот",
+          "validations": [
+            { "required": true, "message": "Годишният оборот е задължителен" },
+            {
+              "pattern": "^\\d+(\\.\\d{1,2})?$",
+              "message": "Моля, въведете валидна сума"
+            }
+          ]
+        },
+        {
+          "id": "numberOfEmployees",
+          "type": "dropdown",
+          "label": "Брой Служители",
+          "options": [
+            { "label": "Само аз", "value": "1" },
+            { "label": "2-10", "value": "2-10" },
+            { "label": "11-50", "value": "11-50" },
+            { "label": "51-200", "value": "51-200" },
+            { "label": "200+", "value": "200+" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contactInfo",
+      "type": "group",
+      "label": "Контактна Информация",
+      "fields": [
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Имейл Адрес",
+          "placeholder": "vashemail@example.com",
+          "validations": [
+            { "required": true, "message": "Имейлът е задължителен" },
+            {
+              "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+              "message": "Моля, въведете валиден имейл"
+            }
+          ]
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Телефон",
+          "placeholder": "+359 88 123 4567",
+          "validations": [
+            { "required": true, "message": "Телефонът е задължителен" },
+            {
+              "pattern": "^(\\+359|0)\\s?[0-9]{2,3}\\s?[0-9]{3}\\s?[0-9]{3,4}$",
+              "message": "Моля, въведете валиден български телефон"
+            }
+          ]
+        },
+        {
+          "id": "postalCode",
+          "type": "text",
+          "label": "Пощенски Код",
+          "placeholder": "Въведете пощенски код",
+          "validations": [
+            {
+              "pattern": "^\\d{4}$",
+              "message": "Пощенският код трябва да е 4 цифри"
+            }
+          ]
+        },
+        {
+          "id": "city",
+          "type": "text",
+          "label": "Град",
+          "placeholder": "Автоматично попълване"
+        },
+        {
+          "id": "oblast",
+          "type": "text",
+          "label": "Област",
+          "placeholder": "Автоматично попълване"
+        },
+        {
+          "id": "streetAddress",
+          "type": "text",
+          "label": "Адрес",
+          "placeholder": "ул. Примерна 123, ап. 45",
+          "validations": [
+            { "required": true, "message": "Адресът е задължителен" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agreements",
+      "type": "group",
+      "label": "Съгласия и Декларации",
+      "fields": [
+        {
+          "id": "additionalComments",
+          "type": "textarea",
+          "label": "Допълнителни Коментари",
+          "placeholder": "Допълнителна информация, която желаете да споделите...",
+          "rows": 3
+        },
+        {
+          "id": "creditCheckConsent",
+          "type": "checkbox",
+          "label": "Съгласявам се да бъде извършена проверка в ЦКР (Централен Кредитен Регистър)",
+          "validations": [
+            {
+              "required": true,
+              "message": "Съгласието за проверка в ЦКР е задължително"
+            }
+          ]
+        },
+        {
+          "id": "gdprConsent",
+          "type": "checkbox",
+          "label": "Съгласявам се с обработката на личните ми данни съгласно GDPR",
+          "validations": [
+            {
+              "required": true,
+              "message": "Съгласието за обработка на лични данни е задължително"
+            }
+          ]
+        },
+        {
+          "id": "termsAccepted",
+          "type": "checkbox",
+          "label": "Приемам Общите условия и Политиката за поверителност",
+          "validations": [
+            { "required": true, "message": "Трябва да приемете условията" }
+          ]
+        },
+        {
+          "id": "electronicConsent",
+          "type": "checkbox",
+          "label": "Съгласявам се да получавам електронни съобщения",
+          "defaultValue": true
+        }
+      ]
+    }
+  ],
+  "apiIntegrations": [
+    {
+      "endpoint": "fetchAddressFromPostalCode",
+      "sourceFields": ["contactInfo.postalCode"],
+      "targetFields": ["contactInfo.city", "contactInfo.oblast"],
+      "debounceMs": 800
+    }
+  ]
+}

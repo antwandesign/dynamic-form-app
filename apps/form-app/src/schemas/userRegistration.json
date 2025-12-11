@@ -1,0 +1,118 @@
+{
+  "title": "Регистрация на Потребител",
+  "description": "Създайте нов потребителски акаунт",
+  "fields": [
+    {
+      "id": "accountType",
+      "type": "radio",
+      "label": "Тип Акаунт",
+      "options": [
+        { "label": "Личен", "value": "PERSONAL" },
+        { "label": "Бизнес", "value": "BUSINESS" }
+      ],
+      "defaultValue": "PERSONAL",
+      "validations": [{ "required": true, "message": "Изберете тип акаунт" }]
+    },
+    {
+      "id": "personalInfo",
+      "type": "group",
+      "label": "Лична Информация",
+      "visibility": {
+        "conditions": [
+          { "field": "accountType", "operator": "equals", "value": "PERSONAL" }
+        ]
+      },
+      "fields": [
+        {
+          "id": "fullName",
+          "type": "text",
+          "label": "Име и Фамилия",
+          "placeholder": "Въведете пълното си име",
+          "validations": [
+            { "required": true, "message": "Името е задължително" }
+          ]
+        },
+        {
+          "id": "egn",
+          "type": "validated-text",
+          "label": "ЕГН",
+          "placeholder": "10-цифрен ЕГН",
+          "validations": [
+            { "required": true, "message": "ЕГН е задължително" },
+            { "pattern": "^\\d{10}$", "message": "ЕГН трябва да е 10 цифри" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "businessInfo",
+      "type": "group",
+      "label": "Фирмена Информация",
+      "visibility": {
+        "conditions": [
+          { "field": "accountType", "operator": "equals", "value": "BUSINESS" }
+        ]
+      },
+      "fields": [
+        {
+          "id": "companyName",
+          "type": "text",
+          "label": "Име на Фирмата",
+          "placeholder": "Въведете името на фирмата",
+          "validations": [
+            { "required": true, "message": "Името на фирмата е задължително" }
+          ]
+        },
+        {
+          "id": "eik",
+          "type": "validated-text",
+          "label": "ЕИК",
+          "placeholder": "9-цифрен ЕИК",
+          "validations": [
+            { "required": true, "message": "ЕИК е задължителен" },
+            { "pattern": "^\\d{9}$", "message": "ЕИК трябва да е 9 цифри" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "email",
+      "type": "text",
+      "inputType": "email",
+      "label": "Имейл Адрес",
+      "placeholder": "your@email.com",
+      "validations": [
+        { "required": true, "message": "Имейлът е задължителен" },
+        {
+          "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+          "message": "Невалиден имейл"
+        }
+      ]
+    },
+    {
+      "id": "password",
+      "type": "text",
+      "inputType": "password",
+      "label": "Парола",
+      "placeholder": "Минимум 8 символа",
+      "validations": [
+        { "required": true, "message": "Паролата е задължителна" },
+        { "minLength": 8, "message": "Минимум 8 символа" }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "type": "checkbox",
+      "label": "Искам да получавам новини и промоции",
+      "defaultValue": false
+    },
+    {
+      "id": "termsAccepted",
+      "type": "checkbox",
+      "label": "Приемам Общите условия",
+      "validations": [
+        { "required": true, "message": "Трябва да приемете условията" }
+      ]
+    }
+  ]
+}

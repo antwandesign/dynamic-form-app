@@ -1,0 +1,131 @@
+{
+  "title": "Резервация на Събитие",
+  "description": "Резервирайте място за нашето предстоящо събитие",
+  "fields": [
+    {
+      "id": "eventDetails",
+      "type": "group",
+      "label": "Детайли за Събитието",
+      "fields": [
+        {
+          "id": "eventType",
+          "type": "dropdown",
+          "label": "Тип Събитие",
+          "placeholder": "Изберете събитие...",
+          "options": [
+            { "label": "🎓 Конференция", "value": "CONFERENCE" },
+            { "label": "🎭 Уъркшоп", "value": "WORKSHOP" },
+            { "label": "🎉 Нетуъркинг", "value": "NETWORKING" },
+            { "label": "🏆 Награждаване", "value": "AWARDS" }
+          ],
+          "validations": [
+            { "required": true, "message": "Изберете тип събитие" }
+          ]
+        },
+        {
+          "id": "ticketType",
+          "type": "radio",
+          "label": "Тип Билет",
+          "options": [
+            { "label": "Стандартен (50 лв.)", "value": "STANDARD" },
+            { "label": "VIP (150 лв.)", "value": "VIP" },
+            { "label": "Корпоративен (100 лв./човек)", "value": "CORPORATE" }
+          ],
+          "validations": [{ "required": true, "message": "Изберете тип билет" }]
+        },
+        {
+          "id": "numberOfGuests",
+          "type": "dropdown",
+          "label": "Брой Гости",
+          "options": [
+            { "label": "1 човек", "value": "1" },
+            { "label": "2 човека", "value": "2" },
+            { "label": "3 човека", "value": "3" },
+            { "label": "4 човека", "value": "4" },
+            { "label": "5+ човека", "value": "5+" }
+          ],
+          "validations": [
+            { "required": true, "message": "Изберете брой гости" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attendeeInfo",
+      "type": "group",
+      "label": "Информация за Участника",
+      "fields": [
+        {
+          "id": "fullName",
+          "type": "text",
+          "label": "Име и Фамилия",
+          "placeholder": "Въведете пълното си име",
+          "validations": [
+            { "required": true, "message": "Името е задължително" }
+          ]
+        },
+        {
+          "id": "email",
+          "type": "text",
+          "label": "Имейл",
+          "placeholder": "your@email.com",
+          "validations": [
+            { "required": true, "message": "Имейлът е задължителен" },
+            {
+              "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+              "message": "Невалиден имейл"
+            }
+          ]
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "label": "Телефон",
+          "placeholder": "+359 88 123 4567",
+          "validations": [
+            { "required": true, "message": "Телефонът е задължителен" }
+          ]
+        },
+        {
+          "id": "company",
+          "type": "text",
+          "label": "Компания (незадължително)",
+          "placeholder": "Име на компанията"
+        }
+      ]
+    },
+    {
+      "id": "preferences",
+      "type": "group",
+      "label": "Предпочитания",
+      "fields": [
+        {
+          "id": "dietaryRequirements",
+          "type": "dropdown",
+          "label": "Хранителни Изисквания",
+          "placeholder": "Изберете...",
+          "options": [
+            { "label": "Няма", "value": "NONE" },
+            { "label": "Вегетарианско", "value": "VEGETARIAN" },
+            { "label": "Веган", "value": "VEGAN" },
+            { "label": "Без глутен", "value": "GLUTEN_FREE" },
+            { "label": "Халал", "value": "HALAL" }
+          ]
+        },
+        {
+          "id": "specialRequests",
+          "type": "textarea",
+          "label": "Специални Заявки",
+          "placeholder": "Допълнителни изисквания...",
+          "rows": 2
+        },
+        {
+          "id": "receiveUpdates",
+          "type": "checkbox",
+          "label": "Искам да получавам актуализации за събитието",
+          "defaultValue": true
+        }
+      ]
+    }
+  ]
+}

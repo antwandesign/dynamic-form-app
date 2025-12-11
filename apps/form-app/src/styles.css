@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   Dynamic Form Generator - Global Form Styles
+   ============================================================================ */
+
+/* Form Builder Container */
+.form-builder {
+  @apply space-y-6;
+}
+
+.form-header {
+  @apply mb-6 pb-4 border-b border-slate-700;
+}
+
+.form-title {
+  @apply text-xl font-bold text-white mb-2;
+}
+
+.form-description {
+  @apply text-sm text-slate-400;
+}
+
+.form-fields {
+  @apply space-y-4;
+}
+
+.form-actions {
+  @apply flex gap-3 pt-6 border-t border-slate-700 mt-6;
+}
+
+.form-submit-button {
+  @apply px-6 py-2.5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium 
+         rounded-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 
+         hover:from-blue-600 hover:to-indigo-700 transition-all duration-200
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+}
+
+.form-reset-button {
+  @apply px-6 py-2.5 bg-slate-700 text-slate-300 font-medium rounded-lg
+         hover:bg-slate-600 hover:text-white transition-all duration-200
+         focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+}
+
+/* Field Container */
+.field-container {
+  @apply space-y-1.5;
+}
+
+.field-container-checkbox {
+  @apply flex items-start;
+}
+
+/* Labels */
+.field-label {
+  @apply block text-sm font-medium text-slate-300;
+}
+
+.field-label-checkbox {
+  @apply flex items-center gap-2 text-sm text-slate-300 cursor-pointer select-none;
+}
+
+.required-indicator {
+  @apply text-pink-400 ml-0.5;
+}
+
+/* Input Fields */
+.field-input {
+  @apply w-full px-3 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white
+         placeholder:text-slate-500 transition-all duration-200
+         focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20;
+}
+
+.field-textarea {
+  @apply w-full px-3 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white
+         placeholder:text-slate-500 resize-none transition-all duration-200
+         focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20;
+}
+
+.field-select {
+  @apply w-full px-3 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white
+         cursor-pointer transition-all duration-200
+         focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20;
+}
+
+.field-select option {
+  @apply bg-slate-800 text-white;
+}
+
+.field-checkbox {
+  @apply w-4 h-4 text-blue-500 bg-slate-800 border-slate-600 rounded
+         focus:ring-blue-500 focus:ring-offset-slate-900 cursor-pointer;
+}
+
+/* Radio Buttons */
+.field-fieldset {
+  @apply border-0 p-0 m-0;
+}
+
+.field-radio-group {
+  @apply flex flex-wrap gap-4 mt-2;
+}
+
+.field-radio-label {
+  @apply flex items-center gap-2 text-sm text-slate-300 cursor-pointer;
+}
+
+.field-radio {
+  @apply w-4 h-4 text-blue-500 bg-slate-800 border-slate-600
+         focus:ring-blue-500 focus:ring-offset-slate-900 cursor-pointer;
+}
+
+/* Error States */
+.field-input-error {
+  @apply border-red-500 focus:border-red-500 focus:ring-red-500/20;
+}
+
+.field-error {
+  @apply text-xs text-red-400 mt-1;
+}
+
+/* Field Groups */
+.field-group {
+  @apply p-4 bg-slate-800/30 border border-slate-700/50 rounded-xl space-y-4
+         backdrop-blur-sm;
+}
+
+.field-group-header {
+  @apply mb-4 pb-3 border-b border-slate-700/50;
+}
+
+.field-group-title {
+  @apply text-base font-semibold text-slate-200;
+}
+
+.field-group-description {
+  @apply text-xs text-slate-500 mt-1;
+}
+
+.field-group-content {
+  @apply space-y-4;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.field-container,
+.field-group {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-800/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-600 rounded-full hover:bg-slate-500 transition-colors;
+}

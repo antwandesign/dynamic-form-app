@@ -1,0 +1,28 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/form-app-e2e"
+    },
+    {
+      "path": "./apps/form-app"
+    },
+    {
+      "path": "./packages/ui"
+    },
+    {
+      "path": "./packages/types"
+    },
+    {
+      "path": "./packages/primitives"
+    },
+    {
+      "path": "./packages/form-core"
+    },
+    {
+      "path": "./packages/theme"
+    }
+  ]
+}

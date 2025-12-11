@@ -1,0 +1,94 @@
+{
+  "title": "Анкета за Обратна Връзка",
+  "description": "Моля, споделете вашето мнение за нашите услуги",
+  "fields": [
+    {
+      "id": "overallRating",
+      "type": "radio",
+      "label": "Обща Оценка",
+      "options": [
+        { "label": "⭐ Много лошо", "value": "1" },
+        { "label": "⭐⭐ Лошо", "value": "2" },
+        { "label": "⭐⭐⭐ Средно", "value": "3" },
+        { "label": "⭐⭐⭐⭐ Добро", "value": "4" },
+        { "label": "⭐⭐⭐⭐⭐ Отлично", "value": "5" }
+      ],
+      "validations": [{ "required": true, "message": "Моля, изберете оценка" }]
+    },
+    {
+      "id": "serviceUsed",
+      "type": "dropdown",
+      "label": "Коя услуга използвахте?",
+      "placeholder": "Изберете услуга...",
+      "options": [
+        { "label": "Онлайн банкиране", "value": "ONLINE_BANKING" },
+        { "label": "Мобилно приложение", "value": "MOBILE_APP" },
+        { "label": "Клон на банката", "value": "BRANCH" },
+        { "label": "Телефонна поддръжка", "value": "PHONE_SUPPORT" },
+        { "label": "Друго", "value": "OTHER" }
+      ],
+      "validations": [{ "required": true, "message": "Моля, изберете услуга" }]
+    },
+    {
+      "id": "whatWentWell",
+      "type": "textarea",
+      "label": "Какво беше добро?",
+      "placeholder": "Опишете положителния си опит...",
+      "rows": 3
+    },
+    {
+      "id": "improvements",
+      "type": "textarea",
+      "label": "Какво може да се подобри?",
+      "placeholder": "Вашите предложения за подобрение...",
+      "rows": 3
+    },
+    {
+      "id": "wouldRecommend",
+      "type": "radio",
+      "label": "Бихте ли препоръчали нашите услуги?",
+      "options": [
+        { "label": "Да, определено", "value": "YES" },
+        { "label": "Може би", "value": "MAYBE" },
+        { "label": "Не", "value": "NO" }
+      ],
+      "validations": [{ "required": true, "message": "Моля, отговорете" }]
+    },
+    {
+      "id": "contactPermission",
+      "type": "checkbox",
+      "label": "Разрешавам да се свържете с мен за допълнителни въпроси",
+      "defaultValue": false
+    },
+    {
+      "id": "contactInfo",
+      "type": "group",
+      "label": "Данни за Контакт",
+      "visibility": {
+        "conditions": [
+          { "field": "contactPermission", "operator": "equals", "value": true }
+        ]
+      },
+      "fields": [
+        {
+          "id": "contactEmail",
+          "type": "text",
+          "label": "Имейл",
+          "placeholder": "your@email.com",
+          "validations": [
+            {
+              "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+              "message": "Невалиден имейл"
+            }
+          ]
+        },
+        {
+          "id": "contactPhone",
+          "type": "text",
+          "label": "Телефон",
+          "placeholder": "+359 88 123 4567"
+        }
+      ]
+    }
+  ]
+}
