@@ -13,7 +13,6 @@ export interface RadioGroupProps
   required?: boolean;
 }
 
-
 export const RadioGroup = forwardRef<HTMLInputElement, RadioGroupProps>(
   (
     { label, options, error, required, name, className = '', ...props },

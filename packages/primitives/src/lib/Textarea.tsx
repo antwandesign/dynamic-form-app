@@ -7,7 +7,6 @@ export interface TextareaProps
   required?: boolean;
 }
 
-
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, error, required, id, className = '', rows = 4, ...props }, ref) => {
     const textareaId =

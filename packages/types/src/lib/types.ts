@@ -21,80 +21,61 @@ export interface VisibilityRule {
   conditions: VisibilityCondition[];
 }
 
-
-
-
-
 export interface ValidationRule {
-  
   when?: {
     field: string;
     equals: string | boolean;
   };
-  
+
   pattern?: string;
-  
+
   message: string;
-  
+
   minLength?: number;
-  
+
   maxLength?: number;
-  
+
   required?: boolean;
 }
 
-
-
-
-
 export interface ApiIntegration {
-  
   endpoint: string;
-  
+
   sourceFields: string[];
-  
+
   targetFields: string[];
-  
+
   debounceMs?: number;
 }
-
-
-
-
 
 export interface FieldOption {
   label: string;
   value: string;
 }
 
-
-
-
-
 export interface BaseFieldConfig {
-  
   id: string;
-  
+
   label: string;
-  
+
   type: FieldType;
-  
+
   placeholder?: string;
-  
+
   defaultValue?: string | boolean;
-  
+
   disabled?: boolean;
-  
+
   visibility?: VisibilityRule;
-  
+
   validations?: ValidationRule[];
-  
+
   apiIntegration?: ApiIntegration;
 }
 
 export interface TextFieldConfig extends BaseFieldConfig {
   type: 'text';
-  
+
   inputType?: 'text' | 'password' | 'email' | 'tel' | 'url' | 'number';
 }
 
@@ -122,7 +103,7 @@ export interface RadioFieldConfig extends BaseFieldConfig {
 
 export interface ValidatedTextFieldConfig extends BaseFieldConfig {
   type: 'validated-text';
-  
+
   dynamicValidation?: {
     dependsOn: string;
     rules: Record<string, { pattern: string; message: string }>;
@@ -135,12 +116,11 @@ export interface GroupFieldConfig
     'placeholder' | 'defaultValue' | 'validations'
   > {
   type: 'group';
-  
+
   description?: string;
-  
+
   fields: FieldConfig[];
 }
-
 
 export type FieldConfig =
   | TextFieldConfig
@@ -151,39 +131,25 @@ export type FieldConfig =
   | ValidatedTextFieldConfig
   | GroupFieldConfig;
 
-
-
-
-
 export interface FormSchema {
-  
   title: string;
-  
+
   description?: string;
-  
+
   fields: FieldConfig[];
-  
+
   apiIntegrations?: ApiIntegration[];
 }
-
-
-
-
 
 export interface FormValues {
   [key: string]: string | boolean | FormValues;
 }
 
-
-
-
-
 export interface FormBuilderProps {
-  
   schema: FormSchema;
-  
+
   onSubmit: (values: FormValues) => void;
-  
+
   initialValues?: FormValues;
 }
 

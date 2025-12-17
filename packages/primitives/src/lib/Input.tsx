@@ -7,7 +7,6 @@ export interface InputProps
   required?: boolean;
 }
 
-
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, required, id, className = '', ...props }, ref) => {
     const inputId = id || `input-${label.toLowerCase().replace(/\s+/g, '-')}`;

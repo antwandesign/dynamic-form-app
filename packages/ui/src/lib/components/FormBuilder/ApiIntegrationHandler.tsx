@@ -5,7 +5,6 @@ interface ApiIntegrationHandlerProps {
   integration: ApiIntegration;
 }
 
-
 export const ApiIntegrationHandler: React.FC<ApiIntegrationHandlerProps> = ({
   integration,
 }) => {

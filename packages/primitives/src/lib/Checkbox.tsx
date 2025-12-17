@@ -7,7 +7,6 @@ export interface CheckboxProps
   required?: boolean;
 }
 
-
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ label, error, required, id, className = '', ...props }, ref) => {
     const checkboxId =

@@ -1,7 +1,4 @@
-
-
 export const colors = {
-  
   primary: {
     50: '#eff6ff',
     100: '#dbeafe',
@@ -14,7 +11,7 @@ export const colors = {
     800: '#1e40af',
     900: '#1e3a8a',
   },
-  
+
   slate: {
     50: '#f8fafc',
     100: '#f1f5f9',
@@ -27,7 +24,7 @@ export const colors = {
     800: '#1e293b',
     900: '#0f172a',
   },
-  
+
   error: '#ef4444',
   success: '#22c55e',
   warning: '#f59e0b',
