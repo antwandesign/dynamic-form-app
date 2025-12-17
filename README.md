@@ -206,7 +206,7 @@ The form generator automatically saves user progress to `localStorage` to preven
 
 - **Storage Key**: `zetta-form-autosave-{schemaId}`
 - **Behavior**:
-  - Changes are saved automatically after a 300ms debounce.
+  - Changes are saved automatically after a debounce.
   - Data persists even if the browser is closed or refreshed.
   - Saved data is automatically **cleared** upon successful form submission or when the form is reset.
 
