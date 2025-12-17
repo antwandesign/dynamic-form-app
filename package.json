@@ -6,6 +6,8 @@
     "dev:serve": "npx nx run @zetta/form-app:dev",
     "dev:form": "nx run-many --target=build --projects=@zetta/form-app --watch --parallel",
     "lint": "nx run-many --target=lint --parallel",
+    "typecheck": "nx run-many --target=typecheck --parallel",
+    "test": "nx run-many --target=test --parallel",
     "build": "npx nx run @zetta/form-app:build",
     "demo": "npm install && npm run build && npm run dev:serve"
   },
