@@ -15,3 +15,10 @@ export {
 export { logger } from './lib/utils/logger';
 export { mockApiCall, VALID_ENDPOINTS } from './lib/services/mockApi';
 export type { MockApiEndpoint } from './lib/services/mockApi';
+export {
+  validateFormSchema,
+  validateFormSchemaObject,
+  validateFormValues,
+  isPlainObject,
+} from './lib/utils/schemaValidator';
+export type { SchemaValidationResult } from './lib/utils/schemaValidator';

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev:serve": "npx nx run @zetta/form-app:dev",
-    "dev:form": "nx run-many --target=build --projects=@zetta/form-app --watch --parallel",
+    "dev:watch": "nx run-many --target=build --projects=@zetta/form-app --watch --parallel",
     "format": "npx prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
     "lint": "nx run-many --target=lint --parallel",
     "typecheck": "nx run-many --target=typecheck --parallel",

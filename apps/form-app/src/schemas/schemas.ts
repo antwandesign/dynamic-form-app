@@ -18,4 +18,5 @@ export const SCHEMA_OPTIONS = [
   { id: 'event', name: '🎫 Резервация на Събитие', schema: eventBookingSchema },
 ] as const;
 
-export type SchemaId = (typeof SCHEMA_OPTIONS)[number]['id'];
+export type SchemaOption = (typeof SCHEMA_OPTIONS)[number];
+export type SchemaId = SchemaOption['id'];
