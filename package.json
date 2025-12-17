@@ -4,13 +4,14 @@
   "license": "MIT",
   "scripts": {
     "dev:serve": "npx nx run @zetta/form-app:dev",
-    "dev:watch": "nx run-many --target=build --projects=@zetta/form-app --watch --parallel",
+    "dev:watch": "npx nx run-many --target=build --projects=@zetta/form-app --watch --parallel",
     "format": "npx prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
-    "lint": "nx run-many --target=lint --parallel",
-    "typecheck": "nx run-many --target=typecheck --parallel",
-    "test": "nx run-many --target=test --parallel",
-    "build": "npx nx run @zetta/form-app:build",
-    "demo": "npm install && npm run build && npm run dev:serve"
+    "lint": "npx nx run-many --target=lint --parallel",
+    "typecheck": "npx nx run-many --target=typecheck --parallel",
+    "test": "npx nx run-many --target=test --parallel",
+    "serve": "npx nx run @zetta/form-app:preview",
+    "build": "npx nx run @zetta/form-app:build --parallel",
+    "demo": "npm install && npm run build && npm run serve"
   },
   "private": true,
   "dependencies": {

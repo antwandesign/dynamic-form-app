@@ -10,8 +10,7 @@ To run the demo application locally:
 npm run demo
 ```
 
-This command will install dependencies, build the project, and start the development server.
-Open **http://localhost:4200** in your browser to view the application.
+This command will install dependencies, build the project, and start the preview server.
 
 ## Schema Architecture
 
